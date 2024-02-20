@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanzariyaviral/namaste-react.git"
+  },
+  "author": "viral kanzariya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanzariyaviral/namaste-react/issues"
+  },
+  "homepage": "https://github.com/kanzariyaviral/namaste-react#readme",
+  "devDependencies": {
+    "@parcel/source-map": "^2.1.1",
+    "parcel": "^2.11.0"
+  }
+}
