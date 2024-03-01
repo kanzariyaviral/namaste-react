@@ -19,7 +19,9 @@
 }
 
 .nav-items > ul > li:hover {
-  text-shadow: 2px 2px #7c7a7a;
+  /* text-shadow: 2px 2px #7c7a7a;
+   */
+   text-shadow: 0 4px 8px 0 lightblue, 0 6px 30px 0 lightblue;
 }
 
 .nav-items > ul > li {
@@ -33,7 +35,7 @@
 }
 
 .res-card {
-  width: 200px;
+  width: 257px;
   background-color: #f0f0f0;
   border-radius: 5px;
   padding: 5px;
@@ -65,4 +67,24 @@
   margin-top: 20%;
   text-align: center;
   color: orangered;
+}
+
+.login {
+  height: 50%;
+  margin-top:22px;
+  cursor: pointer;
+  width: 65px;
+}
+
+.login:hover {
+  /* cursor: pointer; */
+  box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
+}
+
+.search-box{
+  margin: 0 18px 0 0;
+}
+
+.filter{
+  display: flex;
 }
