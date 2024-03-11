@@ -88,3 +88,34 @@
 .filter{
   display: flex;
 }
+
+.restaturant-menu{
+  margin: 0% 20% 0% 20%;
+}
+
+.restaturant-title{
+  border-bottom: 1.5px dashed #dfe0e0;
+}
+
+.menu-logo {
+  border-radius: 5px;
+  align-items: center;
+}
+
+.menu-card{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-bottom: 1.5px solid #dfe0e0;
+}
+
+.veg-only{
+  display: flex;
+  border-bottom: 1px solid #6e6d6d;
+}
+
+.veg-non-img{
+  height: 22px;
+  width: 20px;
+}

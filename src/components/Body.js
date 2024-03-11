@@ -1,18 +1,12 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "./RestaturantCard";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { SWIGGY_RES } from "../utils/constants";
-import moment from "moment/moment";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const yes =
-    moment("05/03/2024", "DD/MM/YYYY").isBefore(moment()) ||
-    moment("05/03/2024", "DD/MM/YYYY").day() != 2
-      ? "Date should be after today and only Tuesday"
-      : true;
-      console.log("*******************",yes);
   useEffect(() => {
     fetchData();
   }, []);
@@ -80,7 +74,7 @@ const Body = () => {
       {filteredRestaurant.length > 0 ? (
         <div className="res-container">
           {filteredRestaurant.map((ele) => (
-            <RestaurantCard key={ele.id} resData={ele} />
+            <Link to={"/restaturant/"+ele.id}><RestaurantCard key={ele.id} resData={ele} /></Link>
           ))}
         </div>
       ) : (
