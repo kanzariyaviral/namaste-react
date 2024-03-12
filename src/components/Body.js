@@ -74,7 +74,8 @@ const Body = () => {
       {filteredRestaurant.length > 0 ? (
         <div className="res-container">
           {filteredRestaurant.map((ele) => (
-            <Link to={"/restaturant/"+ele.id}><RestaurantCard key={ele.id} resData={ele} /></Link>
+            // <Link to={"/restaturant/"+ele.id}><RestaurantCard key={ele.id} resData={ele} /></Link>
+            <RestaurantCard key={ele.id} resData={ele} />
           ))}
         </div>
       ) : (

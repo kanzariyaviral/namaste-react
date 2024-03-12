@@ -100,6 +100,7 @@
 .menu-logo {
   border-radius: 5px;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgb(172, 174, 174), 0 6px 20px 0 rgb(172, 174, 174);
 }
 
 .menu-card{
