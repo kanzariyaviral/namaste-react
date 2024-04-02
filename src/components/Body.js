@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaturantCard";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getOnlyRestaurantsArray } from "../utils/utilsFunction";
+import { searchObject } from "../utils/utilsFunction";
 import { SWIGGY_RES } from "../utils/constants";
 
 const Body = () => {
@@ -9,7 +10,7 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
-    fetchData();
+  fetchData();
   }, []);
 
   const fetchData = async () => {
