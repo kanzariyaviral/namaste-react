@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { RESTATURANT_MENU } from "../utils/constants";
 import MenuCard from "./MenuCard";
 import { useParams } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { vegFilter } from "../utils/utilsFunction";
 
 let onlyVeg = false;
 
@@ -10,6 +12,7 @@ const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState([]);
   const [menuInfo, setMenuInfo] = useState([]);
   const [onlyVegMenuInfo, setOnlyVegMenuInfo] = useState([]);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,16 +22,17 @@ const RestaurantMenu = () => {
     let json = await data.json();
     setResInfo(json.data);
     const { itemCards } =
-    json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+    json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
         ?.card;
     setMenuInfo(itemCards);
     setOnlyVegMenuInfo(itemCards);
   };
-  
+
+  const online = useOnlineStatus()
+  if(!online) return <h1>you are Offline.....</h1>
   if (resInfo.length < 1) return <h1>Loading.......</h1>;
-  
   const { name, cuisines, costForTwoMessage, avgRating } =
-  resInfo?.cards[0]?.card?.card?.info;
+  resInfo?.cards[2]?.card?.card?.info;
 
   return (
     <div className="restaturant-menu">
@@ -46,9 +50,7 @@ const RestaurantMenu = () => {
           onClick={() => {
             if (!onlyVeg) {
               onlyVeg = true;
-              const filter = menuInfo.filter((ele) => {
-                return ele?.card?.info?.isVeg;
-              });
+              const filter = vegFilter(menuInfo)
               setOnlyVegMenuInfo(filter);
             } else {
             onlyVeg = false;
