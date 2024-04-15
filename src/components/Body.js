@@ -28,18 +28,18 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="m-[10px] cursor-pointer flex">
+        <div className="pr-2">
           <input
             type="text"
-            className="search-box"
+            className="ml-[0] mr-[18px] my-[0] border-[1px] border-[solid] rounded-[5px] border-[black] h-[25px]"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value.toLowerCase());
             }}
           />
           <button
-            className="search-btn"
+            className="cursor-pointer border-[1px] border-[solid] rounded-[5px] border-[black] bg-neutral-300 p-1"
             onClick={async () => {
               if (searchText.length) {
                 const filteredRestaurant = await searchObject(
@@ -57,7 +57,7 @@ const Body = () => {
         </div>
 
         <button
-          className="filter-btn"
+          className="cursor-pointer border-[1px] border-[solid] rounded-[5px] border-[black] bg-neutral-300 p-1"
           onClick={() => {
             const fData = listOfRestaurants.filter(
               (ele) => ele.avgRating > 4.3
@@ -69,7 +69,7 @@ const Body = () => {
         </button>
       </div>
       {filteredRestaurant.length > 0 ? (
-        <div className="res-container">
+        <div className="flex flex-wrap">
           {filteredRestaurant.map((ele) => (
             // <Link to={"/restaturant/"+ele.id}><RestaurantCard key={ele.id} resData={ele} /></Link>
             <RestaurantCard key={ele.id} resData={ele} />

@@ -35,16 +35,16 @@ const RestaurantMenu = () => {
   resInfo?.cards[2]?.card?.card?.info;
 
   return (
-    <div className="restaturant-menu">
-      <div className="restaturant-title">
+    <div className="mx-[20%] my-[0%]">
+      <div className="border-dashed border-b-[1.5px] border-[#dfe0e0] py-7">
         <h1>{name}</h1>
         <p>
           {cuisines.join(", ")} - {costForTwoMessage}
         </p>
         <p>{avgRating}★</p>
       </div>
-      <div className="veg-only">
-        <h4>Veg Only</h4>
+      <div className="flex border-solid border-b-[1.5px] border-[#6e6d6d] py-7 items-center">
+        <h4 className="pr-[10px] items-center">Veg Only</h4>
         <input
           type="checkbox"
           onClick={() => {

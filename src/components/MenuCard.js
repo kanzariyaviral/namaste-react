@@ -10,25 +10,23 @@ const MenuCard = (props) => {
     props.data.card.info;
 
   return (
-    <div className="menu-card">
+    <div className="flex justify-between mt-[5%] mb-[5%] border-solid border-b-[1.5px] py-7">
       <div className="menu-card-detail">
         <img
-          className="veg-non-img"
+          className="h-[22px] w-[20px]"
           alt="No Image"
           src={isVeg ? vegBase64 : nonVegBase64}
         ></img>
-        <h3>{name}</h3>
+        <h1>{name}</h1>
         <h5>₹ {(price ? price : defaultPrice) / 100}</h5>
         <p style={{ color: "grey" }}>{description ? description : null}</p>
       </div>
       {imageId ? (
-        <div>
           <img
-            className="menu-logo"
+            className="h-[100px] w-[100px] rounded-[5px] items-center [box-shadow:0_4px_8px_0_rgb(172,_174,_174),_0_6px_20px_0_rgb(172,_174,_174)]"
             alt="No Image"
             src={`${LOGO_RESTATURANT_MENU}${imageId}`}
           ></img>
-        </div>
       ) : (
         <div></div>
       )}
